@@ -1,34 +1,24 @@
 import e from "express";
 const router = e.Router();
-
-// CRUD Operations
+import {
+    movieCreate,
+    movieDelete,
+    movieRead,
+    movieUpdate
+} from '../Controllers/movies.controllers.js'
+// --> crud Operations
 
 //create movie
-router.post('/',(req, res)=>{
-    res.send('create movies')
-    console.log("post movies")
-})
+router.post('/', movieCreate)
 
 
 // read movies
-router.get('/',(req, res)=>{
-    res.send('read movies')
-    console.log("get movies")
-
-})
+router.get('/', movieRead)
 
 //update movies
-router.put('/:id',(req, res)=>{
-    res.send('update movies')
-    console.log("put movies")
-
-})
+router.put('/:id', movieUpdate)
 
 //delete movies
-router.delete('/:id', (req, res)=>{
-    res.send('delete movies')
-    console.log("delete movies")
-
-})
+router.delete('/:id', movieDelete)
 
 export default router;
