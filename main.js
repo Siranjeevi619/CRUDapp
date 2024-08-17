@@ -1,5 +1,5 @@
-import express from "express";
-import MovieRouter from './routes/movies.route'
+import express from 'express'
+import moviesRoute from './routes/movies.route.js';
 const app = express();
 const PORT = 9000;
 
@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
 })
 
 // crud functionality
-app.use('movies', MovieRouter)
+app.use('/movies', moviesRoute)
 app.listen(PORT,()=>{
     console.log(`port is running da @ ${PORT}`)
 })
