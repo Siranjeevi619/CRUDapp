@@ -29,7 +29,7 @@ export const movieUpdate = async (req, res) => {
     const updateMovie = await Movie.findOneAndUpdate(
       { _id: req.params.id },
       { title: req.body.title, hero: req.body.hero },
-      { new: true }
+      { new: true, upsert: true }
     );
     if (!updateMovie) {
       return res.status(404).json({ message: "Movie not found" });
