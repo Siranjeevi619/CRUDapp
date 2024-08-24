@@ -16,6 +16,8 @@ app.get("/", function (req, res) {
 
 // crud functionality
 app.use("/movies", moviesRoute);
+
+//server to run 
 app.listen(PORT, () => {
   console.log(`port is running da @ ${PORT}`);
 });
